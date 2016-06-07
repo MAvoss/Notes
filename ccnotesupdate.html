@@ -1,0 +1,472 @@
+<html>
+<head>
+<script> 
+    var expanded = false;
+    function showCheckboxes() {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+        } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
+</script>
+
+<style> 
+span {
+    display: none;
+}
+ 
+</style>
+<script language="JavaScript" type="text/javascript"> 
+ 
+function promptgo(form){
+ 
+var ticket = prompt("please enter tier 2 ticket number", "");
+var ticket2 = (" / tier 2 ticket number" + ticket + " /" );
+}
+ 
+function outage (form){
+document.notes.fix.value = ""
+document.notes.fix.value += ("Customer called about services not working customer is in an outage informed customer of known outage customer ok");
+}
+function outage$ (form){
+document.notes.fix.value = ""
+document.notes.fix.value += ("Customer called about services not working customer is in an outage informed customer of known outage and gave credit customer ok");
+}
+function nonpay (form){
+document.notes.fix.value = ""
+document.notes.fix.value += ("Customer called about services not working customer is in non-pay disconnect gave customer education customer ok");
+}
+ 
+function nonpay$ (form){
+document.notes.fix.value = ""
+document.notes.fix.value += ("Customer called about services not working customer is in non-pay disconnect / took payment / customer ok");
+}
+function addModem (form){
+document.notes.fix.value = ""
+document.notes.fix.value += ("Customer called about adding modem to account added and provisioned modem all ok");
+ 
+}
+ 
+ 
+//form logic 
+function Buttongo (form) {
+   var CustName = form.CustName.value;//gets value of name fields 
+var fname = form.fname.value;
+  var jname = form.jname.value; 
+   var iname = form.iname.value;
+   var C = form.C.value;
+ 
+   //   var vermeth = form.vermeth.value;//gets verification value 
+  // var verother = form.verother.value;
+   //var custissue = form.custissue.value;
+  // var techactions =  form.techactions.value;
+   //var endresults =  form.endresults.value;
+ 
+  // var str = "Reset form";
+  
+  
+  //grabs all checkboxes named issues and stores as an array then convers to a string and is returned as iss
+ 
+  
+   /*var iss = [];
+ 
+$(':checkbox:checked[name^=issues]').val(function() {
+   
+   iss.push(this.value);
+   
+});
+*/
+ 
+ 
+var values = [];
+  var issues = form.issues;
+ 
+  for (var i=0, iLen=issues.length; i<iLen; i++) {
+    if (issues[i].checked) {
+      values.push(issues[i].value);
+    }
+  }
+  // Do something with values
+  //alert("Vehicles: " + values.join(', '));
+var issue = values.join(' / ') + fname ;
+  //return values;
+ 
+ 
+//var issue = iss.join(' / ');
+ 
+ 
+ var valuesRes = []; 
+  var resolution = form.resolution;
+ 
+  for (var i=0, iLen=resolution.length; i<iLen; i++) {
+    if (resolution[i].checked) {
+      valuesRes.push(resolution[i].value);
+    }
+  }
+  // Do something with values
+  //alert("Vehicles: " + values.join(', '));
+var resolution = valuesRes.join(' / ') + jname  + " / " + C;
+ 
+ 
+ 
+var valuesTech = []; 
+  var techaction = form.techaction;
+ 
+  for (var i=0, iLen=techaction.length; i<iLen; i++) {
+    if (techaction[i].checked) {
+      valuesTech.push(techaction[i].value);
+    }
+  }
+  // Do something with values
+  //alert("Vehicles: " + values.join(', '));
+var techaction = valuesTech.join(' / ') + iname;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   document.notes.fix.value = "";
+ 
+document.notes.fix.value += ("Customer Name: " + CustName + " //" +"\n" );
+ 
+ 
+//if bypassed is checked gets value of selection if not goes with radio buttons 
+//if(vermeth == " Bypassed /"){
+//document.notes.fix.value += ("Verification: " + verother + " //" +"\n" );
+ 
+//}
+//else{
+//document.notes.fix.value += ("Verification: " + vermeth + " //" +"\n" );
+//}
+   
+ 
+ 
+document.notes.fix.value += ("issues: " + issue + " //" +"\n" );
+document.notes.fix.value += ("Actions: " + techaction + " //" +"\n" ); 
+document.notes.fix.value += ("Results: " + resolution  + " //" +"\n" ); 
+ document.notes.fix.value += ("Date: " + Date() + " //" +"\n" );   
+   
+   Date()
+   
+  
+   
+   
+ 
+}
+ 
+function ShowSub(form){
+ 
+document.getElementById("tv").style.display = "block";
+ 
+}
+ 
+function ShowSub1(form){
+ 
+ 
+document.getElementById("net").style.display = "block";
+ 
+}
+function ShowSub2(form){
+ 
+ 
+document.getElementById("phn").style.display = "block";
+ 
+}
+function ShowSub3(form){
+ 
+ 
+document.getElementById("chs").style.display = "block";
+}
+function ShowSub4(form){
+ 
+document.getElementById("tv1").style.display = "block";
+ 
+}
+function ShowSub5(form){
+ 
+document.getElementById("net1").style.display = "block";
+ 
+}
+function ShowSub6(form){
+ 
+ 
+document.getElementById("phn1").style.display = "block";
+ 
+}
+function ShowSub7(form){
+ 
+document.getElementById("chs1").style.display = "block";
+ 
+}
+function ShowSub8(form){
+ 
+ 
+document.getElementById("acc1").style.display = "block";
+}
+function ShowSub9(form){
+ 
+document.getElementById("res").style.display = "block";
+ 
+ 
+}
+function ShowSub10(form){
+ 
+document.getElementById("res2").style.display = "block";
+ 
+ 
+}
+function ShowSub11(form){
+ 
+ 
+document.getElementById("res3").style.display = "block";
+ 
+}
+function Close(form){
+ 
+document.getElementById("tv").style.display = "none";
+document.getElementById("net").style.display = "none";
+document.getElementById("phn").style.display = "none";
+document.getElementById("chs").style.display = "none";
+document.getElementById("tv1").style.display = "none";
+document.getElementById("net1").style.display = "none";
+document.getElementById("phn1").style.display = "none";
+document.getElementById("chs1").style.display = "none";
+document.getElementById("acc1").style.display = "none";
+document.getElementById("res").style.display = "none";
+document.getElementById("res2").style.display = "none";
+document.getElementById("res3").style.display = "none";
+document.getElementById("index").style.display = "none";
+document.getElementById("help").style.display = "none";
+document.getElementByName("notes").reset();
+ 
+}
+ function Showindex(form){
+ 
+ 
+document.getElementById("index").style.display = "block";
+ 
+}
+ function Showhelp(form){
+ 
+ 
+document.getElementById("help").style.display = "block";
+ 
+}
+</script>
+</head>
+<body>
+<form name="notes" method="get">
+
+<table   style="width:auto;height:auto;" border=1>
+<tr>
+<td v align="top">
+Name:<input type="text" name="CustName" value="" autofocus="autofocus" autocomplete="on">
+</td>
+<td>
+<script> 
+var myVar=setInterval(function(){myTimer()},1000);
+ 
+function myTimer() {
+    var d = new Date();
+ 
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+ 
+}
+</script>
+<Span id="demo" style="display:block"></span>
+</td>
+</tr>
+<tr>
+<td>
+
+<table>
+<tr>
+<td>
+<input type="checkbox" name="issues"  id="checkbox-1" class="custom" value="no pic" />
+<label for="checkbox-1">
+<a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&report(gh)=p{589e17d0-d6c6-11e1-d920-000000000000}&forward=ghWizard" target="iframe_a">
+No picture</a>
+ 
+</label></br>
+<input type="checkbox" name="issues"  id="checkbox-2" class="custom" value="audio issues" />
+<label for="checkbox-2">Audio issues</label></br>
+<input type="checkbox"  name="issues" id="checkbox-3" value=" No Guide Information
+ /" > 
+<label for="checkbox-3">No Guide Information</label></br>
+<input type="checkbox"  name="issues" id="checkbox-4" value=" Box Saying Call Operator /" > 
+<label for="checkbox-4">Call Operator</label></br>
+<input type="checkbox" name="issues"  id="checkbox-5"  value=" Receiver Wont Power On /" > 
+<label for="checkbox-5">Wont Power On</label></br>
+<input type="checkbox" name="issues"  id="checkbox-6"  value=" Picture Freezing  /" >
+<label for="checkbox-6">Picture Freeze</label></br>
+<input type="checkbox" name="issues"  id="checkbox-7" value=" Static /" >
+<label for="checkbox-7">Static</label></br>
+<input type="checkbox"  name="issues" id="checkbox-8" value=" Tiling /" > 
+<label for="checkbox-8">Tiling</label></br>
+<input type="checkbox"  name="issues" id="checkbox-88" value=" Contour box frozen /" > 
+<label for="checkbox-88">Contour box <a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&report(gh)=p{56abbdb0-d6c6-11e1-d920-000000000000}&forward=ghWizard" target="_blank">frozen</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-9" value=" Emergency Alert /" />
+<label for="checkbox-9"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{e60b8a60-3e86-11df-d5e6-000000000000}" target="_blank">Emergency Alert</a></label></br>
+<input type="checkbox"  name="issues" id="checkbox-10" value=" Temp Off Air Message  /" > 
+<label for="checkbox-10">Off Air</label></br>	
+<input type="checkbox" name="issues"  id="checkbox-11" value=" On Demand free zone not working /" >
+<label for="checkbox-11">VOD Free zone</label></br>
+<input type="checkbox" name="issues"  id="checkbox-12" value=" On Demand Subscription services not working /" >
+<label for="checkbox-12">VOD Subscription</label></br>
+<input type="checkbox" name="issues"  id="checkbox-13" value=" On Demand purchase not working /" >
+<label for="checkbox-13">VOD Purchase</label></br>
+<input type="checkbox" name="issues"  id="checkbox-14" value=" Video On Demand Not Working /" > 
+<label for="checkbox-14">On Demand</label></br>
+<input type="checkbox" name="issues"  id="checkbox-15" value=" PPV Ordering /" >
+<label for="checkbox-15"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r%7B4abcd140-60f1-11e3-4505-000000000000%7D" target="_blank">PPV Ordering</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-16" value=" PPV Not Working /" />
+<label for="checkbox-16">PPV <a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r%7B0896e890-f314-11e3-5dc7-000000000000%7D" target="_blank">Not Working</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-17" value=" Caller id on tv not displaying  /" > 
+<label for="checkbox-17">Caller ID TV</label></br>
+<input type="checkbox" name="issues"  id="checkbox-18" value=" Video Self install  /" > 
+<label for="checkbox-18"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{77b063e0-82f2-11e0-e4b5-000000000000}" target="_blank">Self Install</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-19"  value=" Recording Issues /" > 
+<label for="checkbox-19">Recording</label></br>
+<input type="checkbox" name="issues"  id="checkbox-20" value=" Playback Issues /" > 
+<label for="checkbox-20">Playback	</label></br>
+<input type="checkbox" name="issues"  id="checkbox-21" value=" Parental Controls  /" > 
+<label for="checkbox-21"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r%7B5f4fc840-69b7-11df-5fca-000000000000%7D" target="_blank">Parental Controls</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-22" value=" Rovi Software Upgrade  /" > 
+<label for="checkbox-22">Rovi SW Update</label></br>
+<input type="checkbox" name="issues"  id="checkbox-222" value=" Mini box activation  /" > 
+<label for="checkbox-222"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{0d1ec590-2df7-11e4-c7c3-000000000000}" target="_blank">Mini Box<a/>
+ activation</label></br>
+ <input type="checkbox" name="issues"  id="checkbox-24" value=" TiVo not working  /"  /> 
+<label for="checkbox-24">TIVO</label></br>
+</td>
+<td>
+<input type="checkbox" name="issues"  id="checkbox-25" value=" No Connection /"> 
+<label for="checkbox-25">No Connection</label></br>
+<input type="checkbox" name="issues"  id="checkbox-26" value=" Intermittent Connection /"> 
+<label for="checkbox-26">Intermittent Connection</label></br>
+<input type="checkbox" name="issues"  id="checkbox-27" value=" Slow Connection /">
+<label for="checkbox-27"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&report(gh)=p{0d355d30-b6e3-11e4-c697-000000000000}&forward=ghWizard" target="_blank">Slow Connection</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-277" value=" WIFI Connection issues /">
+<label for="checkbox-277"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{fe0ee710-f54d-11de-f523-000000000000}" target="iframe_a">WIFI Connection</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-28" value=" Email Issues /">
+<label for="checkbox-28"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&report(gh)=p{96530740-2649-11e5-c938-000000000000}&forward=ghWizard" target="_blank"> Email <a/> </label></br>
+<input type="checkbox" name="issues"  id="checkbox-29" value="Cox Login Issues /" > 
+<label for="checkbox-29"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{493f5690-6770-11df-ccef-000000000000}" target="_blank">Cox Login</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-30" value=" Cox Security Suite Issues /"> 
+<label for="checkbox-30"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{96ef3080-adfb-11e1-eb46-000000000000}" target="iframe_a" >C.S.S.</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-31" value=" Internet Self install /" > 
+<label for="checkbox-31"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{77b063e0-82f2-11e0-e4b5-000000000000}" target="_blank">Self Install</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-32" value=" Add New Modem /">
+<label for="checkbox-32"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{6a445f30-e5c4-11de-f523-000000000000}" target="_blank">Add</a> Modem</label></br>
+<input type="checkbox" name="issues"  id="checkbox-33" value=" Swap Modem /"> 
+<label for="checkbox-33"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{9585c9d0-c1a3-11e3-e7e6-000000000000}" target="_blank">Swap</a> Modem</label></br>
+<input type="checkbox" name="issues"  id="checkbox-35" value=" Mobile Connect Issues /"> 
+<label for="checkbox-35"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r%7B43027480-462a-11e0-f270-000000000000%7D" target="_blank">Mobile Connect</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-36" value=" Browser Issues /" >
+<label for="checkbox-36"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{9de645b0-5426-11e1-e56f-000000000000}" target="_blank">PC</a> - <a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{0d9d4bf0-541e-11e1-e56f-000000000000}" taget="_blank">Mac</a> Browser issues</label></br>
+<input type="checkbox" name="issues"  id="checkbox-37" value=" Receiving Phishing Emails /">
+<label for="checkbox-37"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r%7B31e45340-6407-11df-ccef-000000000000%7D" target="_blank">Phishing</a></label></br>
+<input type="checkbox" name="issues"  id="checkbox-38" value=" HNS Issues /" > 
+<label for="checkbox-38"><a href="https://iq.corp.cox.com/eAgent/iq/Ellington/request.do?create=kb:Residential&view()=r{f1408550-bd13-11df-76c0-000000000000}" target="iframe_a">H.N.S.</a></label></br> 
+	
+</td>
+<td>
+<input type="checkbox" id="checkbox-39" name="issues" value=" No Dial tone /" > 
+<label for="checkbox-39">No Dial Tone</label></br>
+<input type="checkbox" id="checkbox-40" name="issues" value=" Phone Not Ringing /" >  
+<label for="checkbox-40">Not Ringing</label></br>
+<input type="checkbox" id="checkbox-41" name="issues" value=" Static On Telephone line /" >
+<label for="checkbox-41">Static</label></br>
+<input type="checkbox" id="checkbox-42" name="issues" value=" Voice Mail Issues /" > 
+<label for="checkbox-42">Voice Mail</label></br>
+<input type="checkbox" id="checkbox-43" name="issues" value=" voice mail pin Not Working /" > 
+<label for="checkbox-43">VM Pin</label></br>
+<input type="checkbox" id="checkbox-44" name="issues" value=" Phone Tools Not Working  /" > 
+<label for="checkbox-44">Phone Tools</label></br>
+<input type="checkbox" id="checkbox-45" name="issues" value=" Collect Calls Not Working /" > 
+<label for="checkbox-45">Collect Calls</label></br>
+<input type="checkbox" id="checkbox-46" name="issues" value=" Phone Features Not Working /" >
+<label for="checkbox-46">Phone Features</label></br>
+<input type="checkbox" id="checkbox-47" name="issues" value=" Call forwarding /" >
+<label for="checkbox-47">Call Forwarding</label></br>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" id="checkbox-48" name="issues" value=" Touch Screen Frozen /" >
+<label for="checkbox-48">TS Frozen</label></br>
+<input type="checkbox" id="checkbox-49" name="issues" value=" Sensor Failure /" >
+<label for="checkbox-49">Sensor Failure</label></br>
+	  
+	  
+	  
+	  <input type="checkbox" id="checkbox-50" name="issues" value=" false alarm /" >
+<label for="checkbox-50">False alarm</label></br>
+<input type="checkbox" id="checkbox-51" name="issues" value=" Broadband down /" >
+<label for="checkbox-51">Broadband down</label></br>
+<input type="checkbox" id="checkbox-511" name="issues" value=" Getting low battery warning /" >
+<label for="checkbox-511">Low Battery</label></br>
+</td>
+<td>
+other:<input type="text" name="fname">
+</td>
+<td>
+</td>
+</tr>
+</table>
+ 
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+ <fieldset>
+  <legend><b>Notes:</b></legend>
+	 
+<table>
+<tr><td>
+<textarea  id="fix" name="fix" font="sans-seri"    style="height:250px;width:250px" onclick="this.focus();">
+ 
+</textarea>
+</td><td valign="top">	
+<table>
+<tr>
+<td>
+   <input type="reset" value="Reset" id="b1" onclick="Close(this.form)">
+</td>
+ 
+<td>   <input type="button" value="Submit" onclick="Buttongo(this.form)"></td></tr>
+	<tr><td><input type="button" value="Outage" onclick="outage(this.form)" ></td>
+	<td><input type="button" value="Outage $" onclick="outage$(this.form)" ></td></tr>
+<tr><td>	<input type="button" value="Non pay" onclick="nonpay(this.form)"></td>
+	<td><input type="button" value="Non pay $" onclick="nonpay$(this.form)"></td></tr>
+	<tr><td>
+	<input type="button" value="add modem" onclick="addModem(this.form)"> </td><td></td></tr>
+	 <!--yeah right i aint getting rid of this code -->
+	
+</table>
+</td>
+</tr>
+</table>
+ 
+ 
+ 
+         
+      </fieldset>
+</td>
+</tr>
+</table>
+
+</form>
+</body>
+
+</html>
